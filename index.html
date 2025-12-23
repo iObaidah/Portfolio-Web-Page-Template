@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System with Theme Toggle</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@300;400&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for toggle icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle-container">
+        <button id="themeToggle" class="theme-toggle-btn">
+            <i class="fas fa-moon"></i>
+            <span class="toggle-text">Dark Mode</span>
+        </button>
+    </div>
+
+    <!-- Header with Banner -->
+    <header>
+        <div class="banner">
+            <h1>Design System</h1>
+            <p class="tagline">A comprehensive guide with light/dark theme toggle</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#fonts">Fonts</a></li>
+                <li><a href="#text-styles">Text Styles</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#theme-showcase">Theme Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Theme Demo Section -->
+        <section id="theme-showcase" class="section">
+            <h2>Theme Toggle Demo</h2>
+            <div class="theme-demo">
+                <div class="demo-card">
+                    <h3>Current Theme: <span id="currentTheme">Dark</span></h3>
+                    <p>Click the toggle button in the top-right corner to switch between light and dark themes.</p>
+                    <p>The theme preference is saved in your browser's local storage.</p>
+
+                    <div class="theme-preview">
+                        <div class="light-preview">
+                            <h4>Light Theme Preview</h4>
+                            <div class="preview-content light">
+                                <div class="preview-box bg-light">Background</div>
+                                <div class="preview-box text-light">Text</div>
+                                <div class="preview-box primary-light">Primary</div>
+                            </div>
+                        </div>
+
+                        <div class="dark-preview">
+                            <h4>Dark Theme Preview</h4>
+                            <div class="preview-content dark">
+                                <div class="preview-box bg-dark">Background</div>
+                                <div class="preview-box text-dark">Text</div>
+                                <div class="preview-box primary-dark">Primary</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors Section -->
+        <section id="colors" class="section">
+            <h2>Color Palette</h2>
+            <div class="color-grid">
+                <!-- Color Items (same as before, but with theme-aware classes) -->
+                <div class="color-item">
+                    <div class="color-box bg-primary"></div>
+                    <div class="color-info">
+                        <h3>Primary Color</h3>
+                        <p class="color-value">#3a86ff / #0066cc</p>
+                        <p class="color-desc">Primary actions, links - changes with theme</p>
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="color-box bg-secondary"></div>
+                    <div class="color-info">
+                        <h3>Secondary Color</h3>
+                        <p class="color-value">#6c757d / #495057</p>
+                        <p class="color-desc">Secondary elements</p>
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="color-box bg-accent"></div>
+                    <div class="color-info">
+                        <h3>Accent Color</h3>
+                        <p class="color-value">#ff006e / #cc0058</p>
+                        <p class="color-desc">Highlights, alerts</p>
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="color-box bg-success"></div>
+                    <div class="color-info">
+                        <h3>Success Color</h3>
+                        <p class="color-value">#38b000 / #2d8c00</p>
+                        <p class="color-desc">Success states</p>
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="color-box bg-text"></div>
+                    <div class="color-info">
+                        <h3>Text Color</h3>
+                        <p class="color-value">#ffffff / #333333</p>
+                        <p class="color-desc">Primary text - adapts to theme</p>
+                    </div>
+                </div>
+
+                <div class="color-item">
+                    <div class="color-box bg-background"></div>
+                    <div class="color-info">
+                        <h3>Background Color</h3>
+                        <p class="color-value">#0a0a0a / #f8f9fa</p>
+                        <p class="color-desc">Main background - changes with theme</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonts Section (FIXED) -->
+        <section id="fonts" class="section">
+            <h2>Typography</h2>
+            <div class="font-container">
+                <!-- Font 1: Inter -->
+                <div class="font-card">
+                    <div class="font-header">
+                        <h3 class="font-title inter">Inter</h3>
+                        <span class="font-category">Sans-serif</span>
+                    </div>
+                    <div class="font-examples">
+                        <p class="font-sample inter light">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 300 (Light)</p>
+
+                        <p class="font-sample inter regular">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 400 (Regular)</p>
+
+                        <p class="font-sample inter semi-bold">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 600 (Semi-bold)</p>
+
+                        <p class="font-sample inter bold">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 700 (Bold)</p>
+                    </div>
+                    <p class="font-usage">Usage: Body text, paragraphs, general content</p>
+                </div>
+
+                <!-- Font 2: Poppins -->
+                <div class="font-card">
+                    <div class="font-header">
+                        <h3 class="font-title poppins">Poppins</h3>
+                        <span class="font-category">Sans-serif</span>
+                    </div>
+                    <div class="font-examples">
+                        <p class="font-sample poppins regular">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 400 (Regular)</p>
+
+                        <p class="font-sample poppins semi-bold">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 600 (Semi-bold)</p>
+
+                        <p class="font-sample poppins bold-italic">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 600, Italic</p>
+                    </div>
+                    <p class="font-usage">Usage: Headings, titles, callouts</p>
+                </div>
+
+                <!-- Font 3: Roboto Mono -->
+                <div class="font-card">
+                    <div class="font-header">
+                        <h3 class="font-title mono">Roboto Mono</h3>
+                        <span class="font-category">Monospace</span>
+                    </div>
+                    <div class="font-examples">
+                        <p class="font-sample mono light">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 300 (Light)</p>
+
+                        <p class="font-sample mono regular">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 400 (Regular)</p>
+
+                        <p class="font-sample mono code-example">
+                            function helloWorld() {<br>
+                            &nbsp;&nbsp;console.log("Hello, world!");<br>
+                            }
+                        </p>
+                        <p class="font-weight">Code example</p>
+                    </div>
+                    <p class="font-usage">Usage: Code snippets, technical text, monospaced content</p>
+                </div>
+            </div>
+
+            <!-- Font Pairing Examples -->
+            <div class="font-pairings">
+                <h3>Recommended Font Pairings</h3>
+                <div class="pairing-examples">
+                    <div class="pairing-card">
+                        <h4 class="poppins">Poppins + Inter</h4>
+                        <p class="inter">Use Poppins for headings and Inter for body text. This creates clear hierarchy
+                            while maintaining readability.</p>
+                    </div>
+                    <div class="pairing-card">
+                        <h4 class="inter">Inter + Roboto Mono</h4>
+                        <p class="inter">Use Inter for general content and Roboto Mono for code snippets and technical
+                            details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Styles Section (FIXED) -->
+        <section id="text-styles" class="section">
+            <h2>Text Styles</h2>
+
+            <div class="text-styles-container">
+                <!-- H1 Style -->
+                <div class="style-card">
+                    <div class="style-header">
+                        <h1 class="style-demo-h1">H1: Main Page Heading</h1>
+                        <span class="style-class">.main-heading</span>
+                    </div>
+                    <div class="style-details">
+                        <ul class="style-rules">
+                            <li><strong>Font Family:</strong> Poppins</li>
+                            <li><strong>Font Size:</strong> 3rem (48px)</li>
+                            <li><strong>Font Weight:</strong> 700 (Bold)</li>
+                            <li><strong>Line Height:</strong> 1.2</li>
+                            <li><strong>Letter Spacing:</strong> -0.5px</li>
+                            <li><strong>Color:</strong> var(--text-primary)</li>
+                            <li><strong>Margin Bottom:</strong> 1.5rem</li>
+                        </ul>
+                        <div class="css-example">
+                            <code>
+                                .main-heading {<br>
+                                &nbsp;&nbsp;font-family: 'Poppins', sans-serif;<br>
+                                &nbsp;&nbsp;font-size: 3rem;<br>
+                                &nbsp;&nbsp;font-weight: 700;<br>
+                                &nbsp;&nbsp;line-height: 1.2;<br>
+                                &nbsp;&nbsp;letter-spacing: -0.5px;<br>
+                                &nbsp;&nbsp;color: var(--text-primary);<br>
+                                &nbsp;&nbsp;margin-bottom: 1.5rem;<br>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- H2 Style -->
+                <div class="style-card">
+                    <div class="style-header">
+                        <h2 class="style-demo-h2">H2: Section Heading</h2>
+                        <span class="style-class">.section-heading</span>
+                    </div>
+                    <div class="style-details">
+                        <ul class="style-rules">
+                            <li><strong>Font Family:</strong> Poppins</li>
+                            <li><strong>Font Size:</strong> 2rem (32px)</li>
+                            <li><strong>Font Weight:</strong> 600 (Semi-bold)</li>
+                            <li><strong>Line Height:</strong> 1.3</li>
+                            <li><strong>Color:</strong> var(--text-primary)</li>
+                            <li><strong>Margin:</strong> 2rem 0 1rem 0</li>
+                            <li><strong>Border Bottom:</strong> 2px solid var(--primary-color)</li>
+                        </ul>
+                        <div class="css-example">
+                            <code>
+                                .section-heading {<br>
+                                &nbsp;&nbsp;font-family: 'Poppins', sans-serif;<br>
+                                &nbsp;&nbsp;font-size: 2rem;<br>
+                                &nbsp;&nbsp;font-weight: 600;<br>
+                                &nbsp;&nbsp;line-height: 1.3;<br>
+                                &nbsp;&nbsp;color: var(--text-primary);<br>
+                                &nbsp;&nbsp;margin: 2rem 0 1rem 0;<br>
+                                &nbsp;&nbsp;border-bottom: 2px solid var(--primary-color);<br>
+                                &nbsp;&nbsp;padding-bottom: 0.5rem;<br>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph Style -->
+                <div class="style-card">
+                    <div class="style-header">
+                        <p class="style-demo-p">P: Body Text / Paragraph</p>
+                        <span class="style-class">.body-text</span>
+                    </div>
+                    <div class="style-details">
+                        <div class="example-paragraph">
+                            <p class="body-example">This is an example of body text. A well-designed paragraph should be
+                                easily readable with appropriate line height and contrast. Good typography enhances
+                                readability and user experience. Keep paragraphs concise and focused on a single idea.
+                            </p>
+                        </div>
+                        <ul class="style-rules">
+                            <li><strong>Font Family:</strong> Inter</li>
+                            <li><strong>Font Size:</strong> 1rem (16px)</li>
+                            <li><strong>Font Weight:</strong> 400 (Regular)</li>
+                            <li><strong>Line Height:</strong> 1.6</li>
+                            <li><strong>Color:</strong> var(--text-secondary)</li>
+                            <li><strong>Margin Bottom:</strong> 1rem</li>
+                            <li><strong>Max Width:</strong> 70ch (optimal readability)</li>
+                        </ul>
+                        <div class="css-example">
+                            <code>
+                                .body-text {<br>
+                                &nbsp;&nbsp;font-family: 'Inter', sans-serif;<br>
+                                &nbsp;&nbsp;font-size: 1rem;<br>
+                                &nbsp;&nbsp;font-weight: 400;<br>
+                                &nbsp;&nbsp;line-height: 1.6;<br>
+                                &nbsp;&nbsp;color: var(--text-secondary);<br>
+                                &nbsp;&nbsp;margin-bottom: 1rem;<br>
+                                &nbsp;&nbsp;max-width: 70ch;<br>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Link Style -->
+                <div class="style-card">
+                    <div class="style-header">
+                        <a href="#" class="style-demo-link">A: Hyperlink / Anchor Text</a>
+                        <span class="style-class">.text-link</span>
+                    </div>
+                    <div class="style-details">
+                        <ul class="style-rules">
+                            <li><strong>Font Family:</strong> Inter</li>
+                            <li><strong>Font Size:</strong> 1rem (16px)</li>
+                            <li><strong>Font Weight:</strong> 400 (Regular)</li>
+                            <li><strong>Color:</strong> var(--primary-color)</li>
+                            <li><strong>Text Decoration:</strong> none (by default)</li>
+                            <li><strong>Hover:</strong> text-decoration: underline</li>
+                            <li><strong>Transition:</strong> color 0.2s ease</li>
+                        </ul>
+                        <div class="css-example">
+                            <code>
+                                .text-link {<br>
+                                &nbsp;&nbsp;font-family: 'Inter', sans-serif;<br>
+                                &nbsp;&nbsp;font-size: 1rem;<br>
+                                &nbsp;&nbsp;font-weight: 400;<br>
+                                &nbsp;&nbsp;color: var(--primary-color);<br>
+                                &nbsp;&nbsp;text-decoration: none;<br>
+                                &nbsp;&nbsp;transition: color 0.2s ease;<br>
+                                }<br><br>
+                                .text-link:hover {<br>
+                                &nbsp;&nbsp;text-decoration: underline;<br>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Style -->
+                <div class="style-card">
+                    <div class="style-header">
+                        <code class="style-demo-code">Code: Inline Code Snippet</code>
+                        <span class="style-class">.inline-code</span>
+                    </div>
+                    <div class="style-details">
+                        <ul class="style-rules">
+                            <li><strong>Font Family:</strong> 'Roboto Mono', monospace</li>
+                            <li><strong>Font Size:</strong> 0.9rem (14.4px)</li>
+                            <li><strong>Font Weight:</strong> 400 (Regular)</li>
+                            <li><strong>Background:</strong> var(--code-bg)</li>
+                            <li><strong>Color:</strong> var(--accent-color)</li>
+                            <li><strong>Padding:</strong> 0.2rem 0.4rem</li>
+                            <li><strong>Border Radius:</strong> 4px</li>
+                            <li><strong>Border:</strong> 1px solid var(--border-color)</li>
+                        </ul>
+                        <div class="css-example">
+                            <code>
+                                .inline-code {<br>
+                                &nbsp;&nbsp;font-family: 'Roboto Mono', monospace;<br>
+                                &nbsp;&nbsp;font-size: 0.9rem;<br>
+                                &nbsp;&nbsp;font-weight: 400;<br>
+                                &nbsp;&nbsp;background: var(--code-bg);<br>
+                                &nbsp;&nbsp;color: var(--accent-color);<br>
+                                &nbsp;&nbsp;padding: 0.2rem 0.4rem;<br>
+                                &nbsp;&nbsp;border-radius: 4px;<br>
+                                &nbsp;&nbsp;border: 1px solid var(--border-color);<br>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons Section -->
+        <section id="buttons" class="section">
+            <h2>Buttons</h2>
+            <div class="button-container">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-outline">Outline Button</button>
+                <button class="btn btn-accent">Accent Button</button>
+                <button class="btn btn-disabled" disabled>Disabled Button</button>
+            </div>
+            <div class="theme-aware-buttons">
+                <h3>Theme-aware Buttons</h3>
+                <p>These buttons change appearance based on the current theme:</p>
+                <div class="button-container">
+                    <button class="btn btn-theme">Theme Button</button>
+                    <button class="btn btn-theme-secondary">Secondary Theme</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Design System with Theme Toggle | Created for Codecademy Project</p>
+            <p class="footer-note">Try the theme toggle button in the top-right corner!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Theme Toggle -->
+    <script>
+        // Theme Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const currentThemeSpan = document.getElementById('currentTheme');
+            const body = document.body;
+
+            // Check for saved theme preference or default to dark
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+
+            // Toggle theme on button click
+            themeToggleBtn.addEventListener('click', function () {
+                const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            });
+
+            function setTheme(theme) {
+                // Remove both classes first
+                body.classList.remove('light-theme', 'dark-theme');
+
+                // Add the selected theme class
+                body.classList.add(theme === 'dark' ? 'dark-theme' : 'light-theme');
+
+                // Update button text and icon
+                const icon = themeToggleBtn.querySelector('i');
+                const text = themeToggleBtn.querySelector('.toggle-text');
+
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-moon';
+                    text.textContent = 'Dark Mode';
+                    currentThemeSpan.textContent = 'Dark';
+                } else {
+                    icon.className = 'fas fa-sun';
+                    text.textContent = 'Light Mode';
+                    currentThemeSpan.textContent = 'Light';
+                }
+
+                // Save theme preference to localStorage
+                localStorage.setItem('theme', theme);
+            }
+
+            // Log theme changes for debugging
+            console.log('Design System Theme Toggle loaded successfully!');
+            console.log('Current theme saved in localStorage:', localStorage.getItem('theme'));
+        });
+    </script>
+</body>
+
+</html>
