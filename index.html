@@ -200,10 +200,11 @@
                         <p class="font-sample mono regular">The quick brown fox jumps over the lazy dog.</p>
                         <p class="font-weight">Font weight: 400 (Regular)</p>
 
-                        <p class="font-sample mono code-example">
-                            
-                        </p>
-                        <p class="font-weight">Code example</p>
+                        <p class="font-sample mono semi-bold">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 600 (Semi-bold)</p>
+
+                        <p class="font-sample mono bold">The quick brown fox jumps over the lazy dog.</p>
+                        <p class="font-weight">Font weight: 700 (Bold)</p>
                     </div>
                     <p class="font-usage">Usage: Code snippets, technical text, monospaced content</p>
                 </div>
@@ -249,7 +250,7 @@
                             <li><strong>Margin Bottom:</strong> 1.5rem</li>
                         </ul>
                         <div class="css-example">
-                            <code>
+                            <!-- <code>
                                 .main-heading {<br>
                                 &nbsp;&nbsp;font-family: 'Poppins', sans-serif;<br>
                                 &nbsp;&nbsp;font-size: 3rem;<br>
@@ -259,7 +260,7 @@
                                 &nbsp;&nbsp;color: var(--text-primary);<br>
                                 &nbsp;&nbsp;margin-bottom: 1.5rem;<br>
                                 }
-                            </code>
+                            </code> -->
                         </div>
                     </div>
                 </div>
@@ -281,7 +282,7 @@
                             <li><strong>Border Bottom:</strong> 2px solid var(--primary-color)</li>
                         </ul>
                         <div class="css-example">
-                            <code>
+                            <!-- <code>
                                 .section-heading {<br>
                                 &nbsp;&nbsp;font-family: 'Poppins', sans-serif;<br>
                                 &nbsp;&nbsp;font-size: 2rem;<br>
@@ -292,7 +293,7 @@
                                 &nbsp;&nbsp;border-bottom: 2px solid var(--primary-color);<br>
                                 &nbsp;&nbsp;padding-bottom: 0.5rem;<br>
                                 }
-                            </code>
+                            </code> -->
                         </div>
                     </div>
                 </div>
@@ -320,7 +321,7 @@
                             <li><strong>Max Width:</strong> 70ch (optimal readability)</li>
                         </ul>
                         <div class="css-example">
-                            <code>
+                            <!-- <code>
                                 .body-text {<br>
                                 &nbsp;&nbsp;font-family: 'Inter', sans-serif;<br>
                                 &nbsp;&nbsp;font-size: 1rem;<br>
@@ -330,7 +331,7 @@
                                 &nbsp;&nbsp;margin-bottom: 1rem;<br>
                                 &nbsp;&nbsp;max-width: 70ch;<br>
                                 }
-                            </code>
+                            </code> -->
                         </div>
                     </div>
                 </div>
@@ -352,7 +353,7 @@
                             <li><strong>Transition:</strong> color 0.2s ease</li>
                         </ul>
                         <div class="css-example">
-                            <code>
+                            <!-- <code>
                                 .text-link {<br>
                                 &nbsp;&nbsp;font-family: 'Inter', sans-serif;<br>
                                 &nbsp;&nbsp;font-size: 1rem;<br>
@@ -364,7 +365,7 @@
                                 .text-link:hover {<br>
                                 &nbsp;&nbsp;text-decoration: underline;<br>
                                 }
-                            </code>
+                            </code> -->
                         </div>
                     </div>
                 </div>
@@ -387,7 +388,7 @@
                             <li><strong>Border:</strong> 1px solid var(--border-color)</li>
                         </ul>
                         <div class="css-example">
-                            <code>
+                            <!-- <code>
                                 .inline-code {<br>
                                 &nbsp;&nbsp;font-family: 'Roboto Mono', monospace;<br>
                                 &nbsp;&nbsp;font-size: 0.9rem;<br>
@@ -398,7 +399,7 @@
                                 &nbsp;&nbsp;border-radius: 4px;<br>
                                 &nbsp;&nbsp;border: 1px solid var(--border-color);<br>
                                 }
-                            </code>
+                            </code> -->
                         </div>
                     </div>
                 </div>
@@ -435,53 +436,7 @@
     </footer>
 
     <!-- JavaScript for Theme Toggle -->
-    <script>
-        // Theme Toggle Functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const themeToggleBtn = document.getElementById('themeToggle');
-            const currentThemeSpan = document.getElementById('currentTheme');
-            const body = document.body;
-
-            // Check for saved theme preference or default to dark
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            setTheme(savedTheme);
-
-            // Toggle theme on button click
-            themeToggleBtn.addEventListener('click', function () {
-                const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                setTheme(newTheme);
-            });
-
-            function setTheme(theme) {
-                // Remove both classes first
-                body.classList.remove('light-theme', 'dark-theme');
-
-                // Add the selected theme class
-                body.classList.add(theme === 'dark' ? 'dark-theme' : 'light-theme');
-
-                // Update button text and icon
-                const icon = themeToggleBtn.querySelector('i');
-                const text = themeToggleBtn.querySelector('.toggle-text');
-
-                if (theme === 'dark') {
-                    icon.className = 'fas fa-moon';
-                    text.textContent = 'Dark Mode';
-                    currentThemeSpan.textContent = 'Dark';
-                } else {
-                    icon.className = 'fas fa-sun';
-                    text.textContent = 'Light Mode';
-                    currentThemeSpan.textContent = 'Light';
-                }
-
-                // Save theme preference to localStorage
-                localStorage.setItem('theme', theme);
-            }
-
-            // Log theme changes for debugging
-            console.log('Design System Theme Toggle loaded successfully!');
-            console.log('Current theme saved in localStorage:', localStorage.getItem('theme'));
-        });
+    <script src="./script.js">
     </script>
 </body>
 

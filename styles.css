@@ -263,9 +263,9 @@ nav {
 }
 
 .bg-dark {
-    background-color: #0a0a0a;
+    background-color: #333;
     color: #fff;
-    border: 1px solid #333;
+    border: 1px solid #495057
 }
 
 .text-dark {
