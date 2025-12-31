@@ -44,3 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Design System Theme Toggle loaded successfully!');
     console.log('Current theme saved in localStorage:', localStorage.getItem('theme'));
 });
+
+
+window.onload = function () {
+    alert("⚠️ IMPORTANT NOTICE ⚠️\n\n The website is under construction.");
+};
