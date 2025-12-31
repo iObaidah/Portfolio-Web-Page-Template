@@ -47,5 +47,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 window.onload = function () {
-    alert("⚠️ IMPORTANT NOTICE ⚠️\n\n The website is under construction.");
+    alert("⚠️ IMPORTANT NOTICE ⚠️\nThe website is under construction.\n Unfortunately code examples aren't available right now.");
 };
